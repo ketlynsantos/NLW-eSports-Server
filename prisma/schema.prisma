@@ -12,7 +12,7 @@ datasource db {
 
 //game table
 model Game {
-  id        String @id
+  id        String @id @default(uuid())
   title     String
   bannerUrl String
 
@@ -21,10 +21,11 @@ model Game {
 
 //ads table
 model Ad {
-  id              String   @id
+  id              String   @id @default(uuid())
   gameId          String
   name            String
   yearsPlaying    Int
+  discord         String
   weekDays        String
   hourStart       Int
   hourEnd         Int
